@@ -1,0 +1,72 @@
+Domain Model - Cohort Manager 
+
+The Cohort Manager should be able to support the following interactions
+
+- Create a cohort with a cohort name
+- Search for a cohort by cohort name
+- Add student to a specific cohort
+- Remove a cohort by cohort name
+- Remove student from a specific cohort
+- Return errors if student or cohort not found
+
+A cohort should have a list of students. Each student should have a studentID, first name, last name, github username, email.
+```
+&&&&& CLASS  //  $$$$$ METHOD
+
+
+
+&&&&& CohortManager() - Will hold all the methods related to the Cohort Manager methods
+
+Properties -
+
+cohorts = []
+cohortCapacity = 24
+
+
+DONE (But might change approach) $$$$$ createCohort(name) - This method will create new a new cohort and call it what we tell it to.
+
+DONE $$$$$ findCohort(name) - This method will search all cohorts by name and return the match or an error if not found.
+
+DONE $$$$$ removeCohort(name) - This will remove the cohort from the existing cohort list or return an error if not found.
+
+EXT CRITERIA $$$$$ findStudent(id) - This will search all students by id and return the match or an error if not found
+
+DONE $$$$$ createStudent(id, firstName, lastName, github username, email) - This will create the student
+
+
+
+&&&&& Cohort() - Will hold all the methods related to searching for specifc students and specific student management
+
+DONE $$$$$ addStudent(cohortName) - This method will add a student into an existing cohort and populate all the passed details or return an error if not found
+
+$$$$$ removeStudent(id) - This will remove the student from the cohort they are in based on thier ID or return an error if not found.
+
+
+
+&&&&& Student() - Will hold all the methods related to creating new students
+
+properties -
+
+studentId = id
+firstName = firstName
+lastName = lastName
+github = github
+email = email
+
+
+
+
+
+
+
+
+#### Extended
+```
+- Search for student by student ID
+- Cohorts have fixed capacity at 24 students. Adding students is not possible beyond the 24 limit.
+- Cohorts can't have the same name, and can't exist without a name
+- The same student can't exist in multiple cohorts.
+- A student can't be removed from a cohort if it wasn't present in the first place.
+- Search for students by name (first and last) and return all matching results
+
+Your program should be composed of at least two classes
